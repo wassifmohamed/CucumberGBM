@@ -1,27 +1,31 @@
 package StepDefinitions;
 
 
+import Utils.CommonMethods;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.Given;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 
-public class Login {
+import java.time.Duration;
 
-    WebDriver driver;
+public class Login extends CommonMethods {
+
+
 
 
     @Given("open the browser and launch HRMS application")
     public void open_the_browser_and_launch_hrms_application() {
 
-         driver = new ChromeDriver();
-
-        driver.get("http://hrm.syntaxtechs.net/humanresources/symfony/web/index.php/dashboard");
-
+        openBrowserAndLaunchApplication();
 
     }
+
     @Then("user enter valid email and valid password")
     public void user_enter_valid_email_and_valid_password() {
         driver.findElement(By.xpath("//input[@id='txtUsername']")).sendKeys("admin");
@@ -43,6 +47,11 @@ public class Login {
               System.out.println(" user is logged in Successfully ");
           }
 
+    }
+
+    @Then("Close the browser")
+    public void close_the_browser() {
+          closeBrowser();
     }
 
 }

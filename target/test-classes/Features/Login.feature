@@ -5,5 +5,6 @@ Feature: Login Functionalities
       Then     user enter valid email and valid password
       And      click on login button
       Then     user is logged in successfully
+      And      Close the browser
 
 
