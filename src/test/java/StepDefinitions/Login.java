@@ -2,6 +2,7 @@ package StepDefinitions;
 
 
 import Utils.CommonMethods;
+import Utils.ConfigReader;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.Given;
 
@@ -28,8 +29,8 @@ public class Login extends CommonMethods {
 
     @Then("user enter valid email and valid password")
     public void user_enter_valid_email_and_valid_password() {
-        driver.findElement(By.xpath("//input[@id='txtUsername']")).sendKeys("admin");
-        driver.findElement(By.xpath("//input[@id='txtPassword']")).sendKeys("Hum@nhrm123");
+        driver.findElement(By.xpath("//input[@id='txtUsername']")).sendKeys(ConfigReader.getPropertyValue("username"));
+        driver.findElement(By.xpath("//input[@id='txtPassword']")).sendKeys(ConfigReader.getPropertyValue("password"));
 
 
     }
