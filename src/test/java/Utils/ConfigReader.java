@@ -20,7 +20,7 @@ public class ConfigReader {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        return prop;
+          return prop;
     }
 
     public static String  getPropertyValue(String  propKey)

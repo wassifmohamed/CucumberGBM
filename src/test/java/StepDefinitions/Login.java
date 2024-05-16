@@ -8,6 +8,7 @@ import io.cucumber.java.en.Given;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -29,14 +30,21 @@ public class Login extends CommonMethods {
 
     @Then("user enter valid email and valid password")
     public void user_enter_valid_email_and_valid_password() {
-        driver.findElement(By.xpath("//input[@id='txtUsername']")).sendKeys(ConfigReader.getPropertyValue("username"));
-        driver.findElement(By.xpath("//input[@id='txtPassword']")).sendKeys(ConfigReader.getPropertyValue("password"));
+
+      //  driver.findElement(By.xpath("//input[@id='txtUsername']")).sendKeys(ConfigReader.getPropertyValue("username"));
+            WebElement usernameTextBox =driver.findElement(By.xpath("//input[@id='txtUsername']"));
+            sendText(usernameTextBox,ConfigReader.getPropertyValue("username"));
+            
+      //  driver.findElement(By.xpath("//input[@id='txtPassword']")).sendKeys(ConfigReader.getPropertyValue("password"));
+         WebElement passwordTextBox = driver.findElement(By.xpath("//input[@id='txtPassword']"));
+         sendText(passwordTextBox, ConfigReader.getPropertyValue("password"));
 
 
     }
     @Then("click on login button")
     public void click_on_login_button() {
-        driver.findElement(By.xpath("//input[@id='btnLogin']")).click();
+       WebElement loginBtn = driver.findElement(By.xpath("//input[@id='btnLogin']"));
+       doClick(loginBtn);
 
 
     }
@@ -52,7 +60,7 @@ public class Login extends CommonMethods {
 
     @Then("Close the browser")
     public void close_the_browser() {
-          closeBrowser();
+        //  closeBrowser();
     }
 
 }
