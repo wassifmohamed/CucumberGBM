@@ -8,8 +8,8 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "src\\test\\resources\\Features",
                    glue   = "StepDefinitions",
-                   dryRun = true,
-                   tags   = " @smoke2",
+                   dryRun = false,
+                   tags   = "@dataTable",
                    plugin = {"pretty"}
 
 )
