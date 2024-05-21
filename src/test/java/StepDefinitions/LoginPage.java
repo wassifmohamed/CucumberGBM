@@ -17,6 +17,7 @@ public class LoginPage extends CommonMethods {
     @FindBy(id="txtUsername")
     public  WebElement usernameTextBox;
 
+
     @FindBy(id ="txtPassword")
     public WebElement passwordTextBox;
 
