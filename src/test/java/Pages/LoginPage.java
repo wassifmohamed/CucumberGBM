@@ -1,7 +1,6 @@
-package StepDefinitions;
+package Pages;
 
 import Utils.CommonMethods;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -10,7 +9,7 @@ public class LoginPage extends CommonMethods {
 
     public LoginPage()
     {
-        PageFactory.initElements(driver, this);
+        PageFactory.initElements(driver, this); // initializing thw webElements of the current page
     }
 
 
@@ -24,12 +23,12 @@ public class LoginPage extends CommonMethods {
     @FindBy(id="btnLogin")
     public WebElement loginBtn;
 
-    @FindBy(id="welcome")
-    WebElement welcomeIcon;
+    @FindBy(xpath="//a[contains(text(),'Welcome')]")
+    public WebElement welcomeIcon;
 
 
     @FindBy(xpath = "//a[text()='Logout']")
-    WebElement  logoutLink;
+    public WebElement  logoutLink;
 
 
 

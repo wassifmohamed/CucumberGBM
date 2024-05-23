@@ -42,13 +42,6 @@ Feature: Login Functionalities
    # | Jason    | Hum@nhrm123 |
 
 
-
-
-
-
-
-
-
     # HOOKS : for defining pre and Post steps in any Cucumber framework
     # HOOKS :  this is always created inside the StepDefinitions folder
     #       :  this class cannot be inherited
@@ -64,5 +57,9 @@ Feature: Login Functionalities
   # if you want use parametrization
   # if you wish to implement data driven testing
   # Scenario outline is always used along with the keyword 'Examples'
+  # will open and close number of times
+  #data Table :
+
+  #page object Model : an object repository [ is stores or holds all the webelements specific to a particular page
 
 

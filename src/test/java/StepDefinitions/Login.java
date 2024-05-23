@@ -1,6 +1,7 @@
 package StepDefinitions;
 
 
+import Pages.LoginPage;
 import Utils.CommonMethods;
 import Utils.ConfigReader;
 import io.cucumber.datatable.DataTable;
@@ -8,16 +9,8 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.Given;
 
 import io.cucumber.java.en.When;
-import org.checkerframework.framework.qual.DefaultQualifier;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
 
-import java.time.Duration;
 import java.util.List;
 import java.util.Map;
 
@@ -35,7 +28,7 @@ public class Login extends CommonMethods {
 
     @Then("user enter valid email and valid password")
     public void user_enter_valid_email_and_valid_password() {
-        LoginPage login = new LoginPage();
+       // LoginPage login = new LoginPage();
 
       //  driver.findElement(By.xpath("//input[@id='txtUsername']")).sendKeys(ConfigReader.getPropertyValue("username"));
         //    WebElement usernameTextBox =driver.findElement(By.xpath("//input[@id='txtUsername']"));
@@ -49,9 +42,9 @@ public class Login extends CommonMethods {
     }
     @Then("click on login button")
     public void click_on_login_button() {
-        LoginPage login = new LoginPage();
+        //LoginPage login = new LoginPage();
       // WebElement loginBtn = driver.findElement(By.xpath("//input[@id='btnLogin']"));
-    doClick(login.loginBtn);
+        doClick(login.loginBtn);
 
 
     }
@@ -83,7 +76,7 @@ public class Login extends CommonMethods {
     @When("user enters username and password and verifies login")
     public void user_enters_username_and_password_and_verifies_login(DataTable dataTable) {
 
-          LoginPage login = new LoginPage();
+         // LoginPage login = new LoginPage();
         List<Map<String, String>> userCredentials=dataTable.asMaps();
         for (Map<String ,String > userCreds:userCredentials){
 
